@@ -35,20 +35,21 @@ body {
 
 @keyframes stretching {
    0% {
-     width: 0%;
-     transform: rotateX(10deg);
+     width: 100px;
+     transform: rotate(10deg);
    }
    100% {
-     width: 100%;
-     transform: rotateY(10deg);
+     width: 200px;
+     transform: rotate(360deg);
    }
  }
  
  
  .button {
    display: inline-block;
+   padding: 10px;
    background-color:aliceblue;
    animation-name: stretching;
-   animation: stretching 5s, normal, infinite, ease-in;
+   animation: stretching 10s ease-in infinite normal;
  }
  
