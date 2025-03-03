@@ -95,13 +95,13 @@ footer a:hover {
     background: rgb(255 255 255 / 0.9);
     padding: 30px;
 }
-@media screen and (max-width:650px){
+/* @media screen and (max-width:650px){
     .home .content-wrapper {
         padding: 10px;
     }
     .content-bg {
         padding: 20px;
-    }
+    } */
 /* RESUME
 ------------------------------*/
 .resume header::before {
@@ -170,7 +170,7 @@ footer a:hover {
 @media screen and (min-width:650px) and (max-width:859px) {
     .project-wrapper {
         display: grid;
-        grid-template-columns: repear(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 20px;
     }
     .project-item img {
@@ -254,5 +254,4 @@ footer {
         text-align: center;
         padding: 10px;
     }
-}
 }
