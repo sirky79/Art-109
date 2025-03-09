@@ -33,20 +33,49 @@
             <img src="images/img-6.jpg" alt="moon">
         </div>
     </main>
-    <h1>Do you Remember me?</h1>
-    <select>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-        <option value="Maybe">Maybe</option>
-    </select>
-    <div>
-    <input type="submit" value="Are you sure?">
+<!-- //QUESTIONS -->
+    <div class="question" id="question-0">
+        <h1>Do you remember me?</h1>
+        <select>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Maybe">Maybe</option>
+        </select>
+        <input type="submit" value="Are you sure?" id="next-0">
+    </div>
+    <div class="question hidden" id="question-1">
+        <h1>Then why did you forget?</h1>
+        <select>
+            <option value="I didn’t mean to">I didn’t mean to</option>
+            <option value="Who are you?">Who are you?</option>
+        </select>
+        <input type="submit" value="Are you sure?" id="next-1">
+    </div>
 
-    <!-- <input type="send" value="Ok">
-    <input type="stop" value="No"> -->
-</div>
-    <div class="text-div" id="boo">
-        <p>Remember me?</p>
+    <div class="question hidden" id="question-2">
+        <h1>You were there. You did this.</h1>
+        <select>
+            <option value="What did I do?">What did I do?</option>
+            <option value="Leave me alone.">Leave me alone.</option>
+        </select>
+        <input type="submit" value="Are you sure?" id="next-2">
+    </div>
+
+    <div class="question hidden" id="question-3">
+        <h1>Are you afraid of the truth?</h1>
+        <select>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type="submit" value="Are you sure?" id="next-3">
+    </div>
+
+    <div class="question hidden" id="question-4">
+        <h1>Look behind you.</h1>
+        <input type="submit" value="Turn around" id="next-4">
+    </div>
+<!-- ENDING -->
+
     <script src="js/main.js"></script>
 </body>
 </html>
