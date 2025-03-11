@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Remember Me?</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Emblema+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -21,6 +24,7 @@
         </select>
         <input type="submit" value="Are you sure?" id="next-0">
     </div>
+
     <div class="question hidden" id="question-1">
         <img src="images/moving-eye.gif" class="eyeball">
         <h1>Then why did you forget?</h1>
@@ -53,80 +57,44 @@
 
     <div class="question hidden" id="question-4">
         <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Look behind you.</h1>
-        <input type="submit" value="Turn around" id="next-4">
-    </div>
-    </div>
-    <div class="question hidden" id="question-1">
-        <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Then why did you forget?</h1>
+        <h1>Why do you keep lying to yourself?</h1>
         <select>
-            <option value="I didn’t mean to">I didn’t mean to</option>
-            <option value="Who are you?">Who are you?</option>
+            <option value="I’m not lying…">I’m not lying…</option>
+            <option value="I don’t know what’s real anymore.">I don’t know what’s real anymore.</option>
+            <option value="Because the truth is worse.">Because the truth is worse.</option>
         </select>
-        <input type="submit" value="Are you sure?" id="next-1">
+        <input type="submit" value="Are you sure?" id="next-4">
     </div>
-
-    <div class="question hidden" id="question-2">
-        <img src="images/moving-eye.gif" class="eyeball">
-        <h1>You were there. You did this.</h1>
-        <select>
-            <option value="What did I do?">What did I do?</option>
-            <option value="Leave me alone.">Leave me alone.</option>
-            <option value="Fuck Off.">Fuck Off.</option>
-        </select>
-        <input type="submit" value="Are you sure?" id="next-2">
-    </div>
-
-    <div class="question hidden" id="question-3">
-        <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Are you afraid of the truth?</h1>
-        <select>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
-        <input type="submit" value="Are you sure?" id="next-3">
-    </div>
-
-    <div class="question hidden" id="question-4">
-        <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Look behind you.</h1>
-        <input type="submit" value="Turn around" id="next-4">
-    </div>
-
-
-
-
 
     <div class="question hidden" id="question-5">
         <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Do you really think you exist?</h1>
+        <h1>Would you like to remember what really happened?</h1>
         <select>
-            <option value="Yes, I’m here.">Yes, I’m here.</option>
-            <option value="No, I feel… empty.">No, I feel… empty.</option>
-            <option value="Where am I?">Where am I?</option>
+            <option value="No, keep it hidden.">No, keep it hidden.</option>
+            <option value="Yes, show me everything.">Yes, show me everything.</option>
+            <option value="I already know…">I already know…</option>
         </select>
         <input type="submit" value="Are you sure?" id="next-5">
     </div>
 
     <div class="question hidden" id="question-6">
         <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Fear Level</h1>
-        <div>
-            <label for="fear-slider">How much do you remember?</label>
-            <input type="range" id="horror-slider" min="0" max="100" value="50" step="1">
-            <p id="slider-value">Memory: 50%</p>
-        </div>
+        <h1>Do you trust your own thoughts?</h1>
+        <select>
+            <option value="Yes, they belong to me.">Yes, they belong to me.</option>
+            <option value="No, something else is whispering.">No, something else is whispering.</option>
+            <option value="I can’t tell anymore.">I can’t tell anymore.</option>
+        </select>
         <input type="submit" value="Are you sure?" id="next-6">
     </div>
 
     <div class="question hidden" id="question-7">
         <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Are you afraid of the truth?</h1>
-        <select>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+        <h1>Fear Level</h1>
+        <div>
+            <label for="fear-slider">How much do you remember?</label>
+            <input type="range" id="fear-slider" min="0" max="100" value="50" step="1">
+        </div>
         <input type="submit" value="Are you sure?" id="next-7">
     </div>
 
@@ -136,13 +104,10 @@
         <input type="submit" value="Turn around" id="next-8">
     </div>
 
-    <div class="question hidden" id="question-9">
-        <img src="images/moving-eye.gif" class="eyeball">
-        <h1>Are you afraid of the truth?</h1>
-        <select>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select>
+    <div id="freddy-overlay" class="hidden">
+        <img src="images/freddy.gif" alt="Freddy Jumpscare">
+    </div>
+    
 <!-- ENDING -->
 
     <script src="js/main.js"></script>
