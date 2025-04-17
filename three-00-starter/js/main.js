@@ -23,12 +23,19 @@ renderer = new THREE.WebGLRenderer({ antialias: true});
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-
+const light = new THREE.DirectionalLight(0xffffff, 3);
+light.position.set(1,1,5);
+scene.add(light)
 
 // ~~~~~~~~~~~~~~~~ Initiate add-ons ~~~~~~~~~~~~~~~~
 const controls = new OrbitControls(camera, renderer.domElement);
-// const loader = new GLTFLoader(); // to load 3d models
+const loader = new GLTFLoader(); // to load 3d models
 
+loader.load('assets/dog_shiny.gltf', function (gltf) {
+  const dog = gltf.scene;
+  scene.add (dog);
+  dog.scale.set (2, 2, 2);
+})
 
 
 // ~~~~~~~~~~~~~~~~ Create scene here ~~~~~~~~~~~~~~~~
@@ -36,7 +43,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 // // https://threejs.org/docs/#manual/en/introduction/Creating-a-scene
 
 
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const geometry = new THREE.BoxGeometry( 1, 1, 1 ); 
 // const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const texture = new THREE.TextureLoader().load('textures/ice.jpg');
 const material = new THREE.MeshBasicMaterial( { map: texture } );
