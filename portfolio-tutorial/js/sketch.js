@@ -25,14 +25,32 @@ function draw(){
 }   
 
 
-function drawThing(x, y){
-    //draw eyeballs
+function drawThing(x, y) {
+    noStroke();
+  
+    // Body
     fill(255);
+    ellipse(x, y + 20, 40, 30);
+  
+    // Head
     ellipse(x, y, 30, 30);
-    ellipse(x - 20, y + 5, 30, 30);
-
-    //draw pupils
+  
+    // Ears
+    ellipse(x - 10, y - 10, 10, 10);
+    ellipse(x + 10, y - 10, 10, 10);
+  
+    // Inner ears
+    fill(220);
+    ellipse(x - 10, y - 10, 5, 5);
+    ellipse(x + 10, y - 10, 5, 5);
+  
+    // Eyes
     fill(0);
-    ellipse(x + 10, y, 5, 5);
-    ellipse(x - 10, y + 5, 5, 5);
-}
+    ellipse(x - 5, y - 3, 3, 3);
+    ellipse(x + 5, y - 3, 3, 3);
+  
+    // Nose
+    fill(50);
+    ellipse(x, y + 3, 4, 3);
+  }
+  
