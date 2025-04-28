@@ -11,3 +11,5 @@ playBtn.addEventListener('click', function () {
 stopBtn.addEventListener('click', function () {
     song.pause();
 })
+
+song.volume = 0.4;
