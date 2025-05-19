@@ -29,11 +29,49 @@
     <div class="window hidden" id="folderWindow">
       <div class="title-bar">My Files</div>
       <div class="content">
-        <p>📁 Screenshots_2009</p>
-        <p>📁 Music_Mix_MP3</p>
-        <p>📁 Homework - Grade 8</p>
+        <div class="folder" data-target="screenshotWindow">📁 Screenshots_2009</div>
+        <div class="folder" data-target="musicWindow">📁 Music_Mix_MP3</div>
+        <div class="folder" data-target="homeworkWindow">📁 Homework - Grade 8</div>
       </div>
     </div>
+
+    <!-- Folder Content: Screenshots -->
+<!-- Screenshots Folder Window -->
+<div class="window hidden" id="screenshotWindow">
+  <div class="title-bar">Screenshots_2009</div>
+  <div class="content">
+    <img src="images/screenshot 2009.jpg" alt="Screenshot" class="folder-image" />
+  </div>
+</div>
+
+<!-- Music Folder Window -->
+<div class="window hidden" id="musicWindow">
+  <div class="title-bar">Music_Mix_MP3</div>
+  <div class="content">
+
+    <!-- Sub-folder: Playlist -->
+    <input type="checkbox" id="subFolder1" class="toggle" hidden />
+    <label for="subFolder1" class="folder-label">📁 Playlist</label>
+    <div class="folder-content">
+      <ul class="playlist">
+        <li>🎵 Track 01 - Nostalgia Beat</li>
+        <li>🎵 Track 02 - Loading Theme</li>
+        <li>🎵 Track 03 - 8-bit Drive</li>
+        <li>🎵 Track 04 - Message Alert</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Homework Folder Window -->
+<div class="window hidden" id="homeworkWindow">
+  <div class="title-bar">Homework - Grade 8</div>
+  <div class="content">
+    <img src="images/homework.jpg" alt="Homework" class="folder-image" />
+  </div>
+</div>
 
     <!-- Proceed Button -->
     <button id="next-0" class="proceed-button">Next</button>
