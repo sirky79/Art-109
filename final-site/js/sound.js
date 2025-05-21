@@ -1,15 +1,17 @@
 
+let startupSound = document.querySelector("#startupSound");
+let clickSound = document.querySelector("#mouseClick");
 
-let song = document.querySelector("#song");
-let playBtn = document.querySelector("#play-button");
-let stopBtn = document.querySelector("#stop-button");
+document.addEventListener("click", function () {
+  clickSound.currentTime = 0; //reset
+  clickSound.play();
+});
 
-playBtn.addEventListener('click', function () {
-    song.play();
-})
+clickSound.volume = 0.4;
 
-stopBtn.addEventListener('click', function () {
-    song.pause();
-})
 
-song.volume = 0.4;
+document.addEventListener("click", function playStartup() {
+  startupSound.volume = 0.5;
+  startupSound.play();
+  document.removeEventListener("click", playStartup);
+});

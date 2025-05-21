@@ -6,19 +6,25 @@
   <title>Digital Nostalgia Gallery</title>
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
-  <script defer src="js/main.js"></script>
 </head>
 <body>
   <div class="desktop">
+
     <div class="window" id="welcomeWindow">
-      <div class="title-bar">My Old PC</div>
+      <div class="title-bar">
+        My Old PC
+      </div>
       <div class="content">
         <p>Welcome to your memories.</p>
       </div>
     </div>
 
+    <!-- Chat Window -->
     <div class="window hidden" id="chatWindow">
-      <div class="title-bar">Message Logs</div>
+      <div class="title-bar">
+        Message Logs
+        <span class="close-btn">✕</span>
+      </div>
       <div class="content">
         <p>*ding* Hey, remember this?</p>
         <p>2008-07-22: "brb getting food"</p>
@@ -26,57 +32,105 @@
       </div>
     </div>
 
+    <!-- Folder Window -->
     <div class="window hidden" id="folderWindow">
-      <div class="title-bar">My Files</div>
+      <div class="title-bar">
+        My Files
+        <span class="close-btn">✕</span>
+      </div>
       <div class="content">
+        <p>*click on the files!</p>
         <div class="folder" data-target="screenshotWindow">📁 Screenshots_2009</div>
         <div class="folder" data-target="musicWindow">📁 Music_Mix_MP3</div>
         <div class="folder" data-target="homeworkWindow">📁 Homework - Grade 8</div>
+        <div class="folder" data-target="gamesWindow">📁 Mini_Games</div>
+        <div class="folder" data-target="notesWindow">📁 Notes_from_2010</div>
       </div>
     </div>
 
-    <!-- Folder Content: Screenshots -->
-<!-- Screenshots Folder Window -->
-<div class="window hidden" id="screenshotWindow">
-  <div class="title-bar">Screenshots_2009</div>
-  <div class="content">
-    <img src="images/screenshot 2009.jpg" alt="Screenshot" class="folder-image" />
-  </div>
-</div>
-
-<!-- Music Folder Window -->
-<div class="window hidden" id="musicWindow">
-  <div class="title-bar">Music_Mix_MP3</div>
-  <div class="content">
-
-    <!-- Sub-folder: Playlist -->
-    <input type="checkbox" id="subFolder1" class="toggle" hidden />
-    <label for="subFolder1" class="folder-label">📁 Playlist</label>
-    <div class="folder-content">
-      <ul class="playlist">
-        <li>🎵 Track 01 - Nostalgia Beat</li>
-        <li>🎵 Track 02 - Loading Theme</li>
-        <li>🎵 Track 03 - 8-bit Drive</li>
-        <li>🎵 Track 04 - Message Alert</li>
-      </ul>
+    <!-- Screenshots Folder Window -->
+    <div class="window hidden" id="screenshotWindow">
+      <div class="title-bar">
+        Screenshots_2009
+        <span class="close-btn">✕</span>
+      </div>
+      <div class="content">
+        <img src="images/screenshot 2009.jpg" alt="Screenshot" class="folder-image" />
+      </div>
     </div>
 
-  </div>
-</div>
+    <!-- Music Folder Window -->
+    <div class="window hidden" id="musicWindow">
+      <div class="title-bar">
+        Music_Mix_MP3
+        <span class="close-btn">✕</span>
+      </div>
+      <div class="content">
+
+        
+        <input type="checkbox" id="music-folder" class="toggle" hidden />
+        <label for="music-folder" class="folder-label">📁 Playlist</label>
+        <div class="folder-content">
+        <ul class="playlist">
+          <li>🎵 Baby - Justin Bieber</li>
+          <li>🎵 The Climb - Miley Cyrus</li>
+          <li>🎵 Call Me Maybe - Carly Rae Jepsen</li>
+          <li>🎵 Love Story - Taylor Swift</li>
+        </ul>
+        </div>
+      </div>
+    </div>
 
 
-<!-- Homework Folder Window -->
-<div class="window hidden" id="homeworkWindow">
-  <div class="title-bar">Homework - Grade 8</div>
-  <div class="content">
-    <img src="images/homework.jpg" alt="Homework" class="folder-image" />
-  </div>
-</div>
+    <div class="window hidden" id="homeworkWindow">
+      <div class="title-bar">
+        Homework - Grade 8
+        <span class="close-btn">✕</span>
+      </div>
+      <div class="content">
+        <img src="images/homework.jpg" alt="Homework" class="folder-image" />
+      </div>
+    </div>
 
-    <!-- Proceed Button -->
+
+    <div class="window hidden" id="gamesWindow">
+      <div class="title-bar">
+        Mini_Games
+        <span class="close-btn">✕</span>
+      </div>
+      <div class="content">
+        <p>🎮 Pinball.exe</p>
+        <p>🕹️ Solitaire.exe</p>
+        <p>💾 Snake.zip</p>
+      </div>
+    </div>
+
+
+    <div class="window hidden" id="notesWindow">
+      <div class="title-bar">
+        Notes_from_2010
+        <span class="close-btn">✕</span>
+      </div>
+      <div class="content">
+        <p>📝 To-Do List.txt</p>
+        <p>- Buy new USB stick</p>
+        <p>- Backup school project</p>
+        <p>- Delete MySpace messages 😅</p>
+      </div>
+    </div>
+
+  <img src="images/windowsxp.jpg" alt="Background" class="background-image" />
+
     <button id="next-0" class="proceed-button">Next</button>
   </div>
 
-  <!-- <audio id="startupSound" src="assets/startup.mp3" autoplay></audio> -->
+
+  <audio id="mouseClick" src="images/mouseclick.mp3" preload="auto"></audio>
+  <audio id="startupSound" src="images/windows-xp-startup.mp3" preload="auto"></audio>
+
+
+  <script defer src="js/main.js"></script>
+  <script src="js/sketch.js"></script>
+  <script src="js/sound.js"></script>
 </body>
 </html>

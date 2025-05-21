@@ -1,8 +1,12 @@
 
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector(".proceed-button");
   let step = 0;
 
+  // Next button step logic
   button.addEventListener("click", () => {
     step++;
     if (step === 1) document.querySelector("#chatWindow").classList.remove("hidden");
@@ -14,32 +18,51 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Make all windows draggable
-  document.querySelectorAll(".window").forEach(window => {
-    const header = window.querySelector(".title-bar");
+  document.querySelectorAll(".window").forEach(win => {
+    const titleBar = win.querySelector(".title-bar");
 
-    header.addEventListener("mousedown", startDrag);
+    titleBar.addEventListener("mousedown", function (event) {
+      const offsetX = event.clientX - win.offsetLeft;
+      const offsetY = event.clientY - win.offsetTop;
 
-    function startDrag(e) {
-      const shiftX = e.clientX - window.offsetLeft;
-      const shiftY = e.clientY - window.offsetTop;
-
-      function onMouseMove(e) {
-        window.style.left = `${e.clientX - shiftX}px`;
-        window.style.top = `${e.clientY - shiftY}px`;
+      function moveWindow(event) {
+        win.style.left = (event.clientX - offsetX) + "px";
+        win.style.top = (event.clientY - offsetY) + "px";
       }
 
-      document.addEventListener("mousemove", onMouseMove);
-      document.addEventListener("mouseup", () => {
-        document.removeEventListener("mousemove", onMouseMove);
-      }, { once: true });
-    }
+      document.addEventListener("mousemove", moveWindow);
 
-document.querySelectorAll(".folder").forEach(folder => {
-  folder.addEventListener("click", () => {
-    const targetId = folder.getAttribute("data-target");
-    document.getElementById(targetId)?.classList.remove("hidden");
+      document.addEventListener("mouseup", function () {
+        document.removeEventListener("mousemove", moveWindow);
+      }, { once: true });
+    });
+  });
+
+  // Open folders to show their windows
+  document.querySelectorAll(".folder").forEach(folder => {
+    folder.addEventListener("click", () => {
+      const targetId = folder.getAttribute("data-target");
+      document.getElementById(targetId)?.classList.remove("hidden");
+    });
+  });
+
+  // Menu toggle (if you’re using a nav menu)
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+document.querySelectorAll(".close-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const windowclose = btn.closest(".window");
+    if (windowclose) {
+      windowclose.classList.add("hidden");
+    }
   });
 });
 
-  });
+  
 });
