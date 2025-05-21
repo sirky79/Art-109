@@ -87,13 +87,13 @@ body, html {
 }
 
 .close-btn {
-  float: right;
-  font-size: 16px;
-  font-weight: bold;
   cursor: pointer;
-  color: white;
-  margin-right: 5px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: auto;
+  padding: 0 10px;
 }
+
 
 .close-btn:hover {
   color: red;
